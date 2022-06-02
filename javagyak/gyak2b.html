@@ -50,6 +50,16 @@
         .catch((error) => {
             console.error(error)
         })
+
+        function* loop(arr) {
+            for (const item of arr) {
+                yield item;
+            }
+        }
+
+        const items = loop(users);
+        console.log(items.next());
+
     </script>
 </body>
 </html>

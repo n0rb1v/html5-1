@@ -21,6 +21,28 @@
             .then((data) => data.json())
             .then((data) => console.log(data.users))
        
+
+        function* fibonacci(curr,next) {
+            while (true) {
+                next = next + curr;
+                curr = next - curr;
+                yield next;
+            }
+        }
+
+        const fibo = fibonacci(1,1);
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+        console.log(fibo.next());
+
+
     </script>
 </body>
 </html>
