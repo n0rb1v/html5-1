@@ -29,19 +29,38 @@
                 yield next;
             }
         }
+        function* range(start, end, step) {
+            while (start <= end) {
+                yield start;
+                start += step;
+            }
+        }
+        function* searchHash(text) {
+            let match;
+            do {
+                match = pattern.exec(text);
+                if (match) {
+                    yield match[0]  //elso talalat
+                }
+            } while (match)
+        }
 
         const fibo = fibonacci(1,1);
         console.log(fibo.next());
         console.log(fibo.next());
         console.log(fibo.next());
         console.log(fibo.next());
-        console.log(fibo.next());
-        console.log(fibo.next());
-        console.log(fibo.next());
-        console.log(fibo.next());
-        console.log(fibo.next());
-        console.log(fibo.next());
+        
+        for (const value of range(20,200,3)) {
+            console.log(value);
+        }
 
+        const pattern = /#\w+/g;   //#kezdodik legalabb egy karakter, globalis kereses
+        const text = 'Ez egy #sample #szoveg ami #tartalmaz #nehany hastaget';
+
+        for (const hashtag of searchHash(text)) {
+            console.log(hashtag);
+        }
 
     </script>
 </body>
