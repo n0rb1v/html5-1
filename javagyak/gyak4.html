@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    'use strict';
+
+    function resolve(value) {
+        return new Promise(resolve => {
+            setTimeout(resolve, 2000, value*2)
+        })
+    }   
+
+    async function serial() {
+        const a = await resolve(1);
+        const b = await resolve(2);
+        const c = await resolve(3);
+        return a + b + c;
+    }
+
+    async function parallel() {
+        const ax = resolve(10);
+        const bx = resolve(20);
+        const cx = resolve(30);
+        return (await ax) + (await bx) + (await cx);
+    }
+
+    async function execTime(func) {
+        const start = performance.now();
+        const result = await func;
+        const end = performance.now();
+        console.log({
+            functionName: func.name,
+            executionTime: end - start,
+            result
+        })
+    }
+
+    execTime(serial);
+//    execTime(parallel);
+
+    </script>
+</body>
+</html>
