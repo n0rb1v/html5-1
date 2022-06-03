@@ -44,6 +44,22 @@
                 }
             } while (match)
         }
+        function* main() {
+            for (const url of urls) {
+                yield fetch(url);
+            }
+        }
+        function responeHandler(gen) {
+            const result = gen.next();
+            if (!result.done) {
+                result.value
+                    .then((data) => data.json())
+                    .then((user) => console.log(user))
+                    .catch((error) => console.log(error))
+                responeHandler(gen);
+            }
+        }
+
 
         const fibo = fibonacci(1,1);
         console.log(fibo.next());
@@ -61,6 +77,10 @@
         for (const hashtag of searchHash(text)) {
             console.log(hashtag);
         }
+
+        const urls = ['./gyak3.json', './data3.json'];
+        const myGenerator = main();
+        responeHandler(myGenerator);
 
     </script>
 </body>
