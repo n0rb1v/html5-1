@@ -9,9 +9,11 @@
 <body>
     <script>
         'use strict';
-      
-        const user = {
-            name: 'Jane Doe',
+        
+        function User(name) {   //constructor
+            this.name = name;
+        }
+        User.prototype = {
             get fName() {
                 return this.name.split(' ')[0];
             },
@@ -26,6 +28,7 @@
             }
         }
 
+        const user = new User('Jane Doe');
         console.log(user.fName);
         console.log(user.lName);
         user.fName = 'Kiss';
