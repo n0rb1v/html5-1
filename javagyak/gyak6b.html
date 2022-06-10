@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+            constructor(name, role) {
+                this.name = name;
+                this.role = role;
+            }
+
+            whoAmI() {
+                console.log(`i'm ${this.name}`)
+            }
+        }
+
+        const user1 = new User('Jane Doe', 'user');
+        const user2 = new User('Jake Doe', 'admin');
+
+        console.log(user1, user2);
+        user1.whoAmI();
+    </script>
+</body>
+</html>
