@@ -1,5 +1,6 @@
 @use 'colors' as c;
 @use 'mixin' as m;
+@use 'sass:color';
 
 .btn {
     border: none;
@@ -42,7 +43,16 @@
         }
     }
     &--alt {
-        @include m.btn-alt(c.$alt,c.$alt-dark);
+        @include m.btn-alt(c.$alt, color.scale(c.$alt, $lightness: -10%));
     }
+  
+}
 
+.btn--extra {
+    @extend .btn;
+    background-color: c.$extra;
+
+    &:hover {
+        background-color: color.scale(c.$extra, $lightness: -10%);
+    }
 }
