@@ -6,8 +6,8 @@ body {
 nav {
   display: flex;
   justify-content: center;
-  background: #fff;
-  box-shadow: 0 0 10px #aaa;
+  background: #444;
+  box-shadow: 0 0 10px #111;
 }
 
 nav div {
@@ -43,7 +43,7 @@ nav div ul li {
 }
 
 nav div ul li a {
-  color: #222;
+  color: #aaa;
   display: block;
   line-height: 1rem;
   padding: 1rem;
@@ -51,7 +51,7 @@ nav div ul li a {
 }
 
 nav div ul li a:hover {
-  background: #aaa;
+  background: #fff;
 }
 
 nav div input[type=checkbox] {
@@ -78,7 +78,7 @@ nav div label {
   }
 }
 nav div span {
-  background: #222;
+  background: #999;
   display: block;
   height: 2px;
   width: 1.5rem;

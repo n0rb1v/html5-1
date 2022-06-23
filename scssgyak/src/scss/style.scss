@@ -1,3 +1,5 @@
+@use "colors" as *;
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -6,8 +8,8 @@ body {
 nav {
     display: flex;
     justify-content: center;
-    background: #fff;
-    box-shadow: 0 0 10px #aaa;
+    background: $nav-bg-color;
+    box-shadow: 0 0 10px $nav-shadow-color;
 }
 
 nav div {
@@ -45,14 +47,14 @@ nav div ul li {
 
 }
 nav div ul li a {
-    color: #222;
+    color: $link-color;
     display: block;
     line-height: 1rem;
     padding: 1rem;
     text-decoration: none;
 }
 nav div ul li a:hover {
-    background: #aaa;
+    background: $link-hover-color;
 }
 nav div input[type="checkbox"] {
     display: none;
@@ -75,7 +77,7 @@ nav div label {
     }    
 }
 nav div span {
-    background: #222;
+    background: $lnik-hover-bg-color;
     display: block;
     height: 2px;
     width: 1.5rem;
