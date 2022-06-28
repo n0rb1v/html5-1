@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a5596ca5c7.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+        <div class="content">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb bg-white mb-0">
+                          <li class="breadcrumb-item"><a href="index.html">Fooladal</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Kapcsolat</li>
+                        </ol>
+                      </nav>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-md-0">
+                        <form class="form-group" novalidate>
+                            <label for="email" class="form-label">Email cim</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="1@2.3" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          <form class="form-group" novalidate>
+                              <label for="name" class="form-label">Név</label>
+                              <input type="name" class="form-control" name="name" id="name" placeholder="Kis Jeno" required>
+                              <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                          <div class="form-group ">
+                            <label for="message" class="font-weight-bold">Üzenet</label>
+                            <textarea name="message" id="message" rows="5" class="form-control"></textarea>
+                          </div>
+                          <div class="input-group">
+                            <select name="topic" id="topic" class="form-control">
+                                <option value="technikai">technikai</option>
+                                <option value="szamalazasi">szamalazasi</option>
+                                <option value="egyeb">egyeb</option>
+                            </select>
+                            <div class="input-group-append">
+                                <label for="topic" class="input-group-text">kérdés</label>
+                            </div>
+                          </div>
+                          <div class="form-check">
+                            <input type="checkbox" name="newsletter" id="newsletter" class="form-check-input" checked>
+                            <label for="newsletter" class="font-weight-bold form-check-label">
+                                Feliratkozom
+                            </label>
+                          </div>
+                          <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Küldés
+                        </button>
+                    </div>
+                    <div class="col-md-6 ">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2698.7987627817815!2d19.210433052009023!3d47.43536717907136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c220cbda9d7d%3A0x49d945d71d6c00c8!2sBudapest%2C%20Zilah%20u.%207-13%2C%201185!5e0!3m2!1shu!2shu!4v1656424948536!5m2!1shu!2shu"
+                        class="ratio ratio-4x3" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sikeres</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Üzenetet megkaptuk 24 órán belül érkezik a válasz
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      </script>
+  
+  
+</body>
+</html>
